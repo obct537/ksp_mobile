@@ -7,8 +7,25 @@ angular.module('starter.services', [])
   var planets = [{
     id: 0,
     name: 'Kerbin',
-    img: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  } ];
+  }, {
+    id: 1,
+    name: 'Jool',
+  },{
+    id: 2,
+    name: 'Moho',
+  },{
+    id: 3,
+    name: 'Eve',
+  },{
+    id: 4,
+    name: 'Duna',
+  },{
+    id: 5,
+    name: 'Eeloo',
+  },{
+    id: 6,
+    name: 'Dres',
+  }];
 
   return {
     all: function() {

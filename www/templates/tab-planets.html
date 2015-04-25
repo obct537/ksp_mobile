@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="planet in planets" type="item-text-wrap" href="#/tab/planets/{{planet.id}}">
-        <img ng-src="{{planet.img}}">
+        <img ng-src="/img/{{planet.name | lowercase}}.png">
         <h2>{{planet.name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
