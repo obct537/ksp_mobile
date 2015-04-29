@@ -3,7 +3,6 @@ angular.module('starter.services', [])
 .factory('Planets', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
   var planets = [{
     id: 0,
     name: 'Kerbin',
@@ -30,9 +29,6 @@ angular.module('starter.services', [])
   return {
     all: function() {
       return planets;
-    },
-    remove: function(planet) {
-      planets.splice(planets.indexOf(planet), 1);
     },
     get: function(planetId) {
       for (var i = 0; i < planets.length; i++) {

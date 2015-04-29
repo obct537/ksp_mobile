@@ -38,6 +38,36 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
+  .state('tab.wiki', {
+      url: '/wiki',
+      views: {
+        'tab-wiki': {
+          templateUrl: 'templates/tab-wiki.html',
+          controller: 'WikiCtrl'
+        }
+      }
+  })
+
+  .state('tab.calc', {
+      url: '/calc',
+      views: {
+        'tab-calc': {
+          templateUrl: 'templates/tab-calc.html',
+          controller: 'CalcCtrl'
+        }
+      }
+  })
+
+  .state('tab.calcDetails', {
+      url: '/calc/:calcId',
+      views: {
+        'tab-calc': {
+          templateUrl: 'templates/tab-calc.html',
+          controller: 'CalcDetailCtrl'
+        }
+      }
+  })
+
   .state('tab.planets', {
       url: '/planets',
       views: {

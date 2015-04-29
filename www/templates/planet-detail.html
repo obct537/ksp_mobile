@@ -6,9 +6,13 @@
 -->
 <ion-view view-title="{{planet.name}}">
   <ion-content class="padding">
-    <img ng-src="/img/{{planet.name | lowercase }}.png" style="width: 64px; height: 64px">
-    <p>
-      {{planet.name}}
-    </p>
+    <div class="row">
+        <div class="column col-40">
+            <img ng-src="img/{{planet.name | lowercase }}.png" style="height: 125px; width: 125px;">
+        </div>
+        <div class="column col-60 planet-top-data">
+            <h2>{{ planet.name }}</h2>
+        </div>
+    </div>
   </ion-content>
 </ion-view>

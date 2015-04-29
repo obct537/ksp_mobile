@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['starter.calcs'])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -13,8 +13,19 @@ angular.module('starter.controllers', [])
   $scope.planet = Planets.get($stateParams.planetId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('WikiCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
-  };
+  }
+})
+
+.controller('CalcCtrl', function($scope, Calcs) {
+  $scope.calcs = Calcs.all();
+  $scope.remove = function(calc) {
+    Calcs.remove(calc);
+  }
+})
+
+.controller('CalcDetailCtrl', function($scope, $stateParams, Calcs, $location) {
+  $location.path('/' + $stateParams.calcId + '.html');
 });
