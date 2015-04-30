@@ -27,5 +27,5 @@ angular.module('starter.controllers', ['starter.calcs'])
 })
 
 .controller('CalcDetailCtrl', function($scope, $stateParams, Calcs, $location) {
-  $location.path('/' + $stateParams.calcId + '.html');
+  $scope.calc = Calcs.get($stateParams.calcId);
 });
