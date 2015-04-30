@@ -138,6 +138,11 @@ angular.module('starter.services', [])
     radius: 600,
     inclination: 0.025,
     soi: 10856.51837,
+},{
+    id: 15,
+    name: 'Kerbol',
+    mu: 1167922000,
+    radius: 6540
 }];
 
   return {
