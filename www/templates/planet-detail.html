@@ -14,5 +14,22 @@
             <h2>{{ planet.name }}</h2>
         </div>
     </div>
+    <ul class="list">
+        <li class="item">
+            Parent body: {{ planet.parent }}
+        </li>
+        <li class="item">
+            Altitude: {{ planet.alt }} km
+        </li>
+        <li class="item">
+            Radius: {{ planet.radius }} m
+        </li>
+        <li class="item">
+            Inclination: {{ planet.inclination }}&deg;
+        </li>
+        <li class="item">
+            Sphere of influence: {{ planet.soi }} km
+        </li>
+    </ul>
   </ion-content>
 </ion-view>
