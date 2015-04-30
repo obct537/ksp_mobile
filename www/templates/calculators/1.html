@@ -1,72 +1,91 @@
-<div ng-controller="dvCtrl">
+<form ng-controller="dvCtrl" class="calc">
 	<fieldset>
-  <select ng-model="origin" id="origin">
-		<option>Moho</option>
-		<option>Eve</option>
-                      <optgroup label="Eve's moons:">
-			<option>Gilly</option>
-		</optgroup>
-		<option selected="true">Kerbin</option>
-		<optgroup label="Kerbin's moons:">
-			<option>Mun</option>
-			<option>Minmus</option>
-		</optgroup>
-		<option>Duna</option>
-                      <optgroup label="Duna's moons:">
-			<option>Ike</option>
-		</optgroup>
-		<option>Dres</option>
-                      <option>Jool</option>
-		<optgroup label="Jool's moons:">
-			<option>Laythe</option>
-			<option>Vall</option>
-			<option>Tylo</option>
-			<option>Bop</option>
-			<option>Pol</option>
-		</optgroup>
-		<option>Eeloo</option>
-	</select>
-	<select ng-model="destination" id="destination">
-		<option>Moho</option>
-		<option>Eve</option>
-                      <optgroup label="Eve's moons:">
-			<option>Gilly</option>
-		</optgroup>
-		<option>Kerbin</option>
-		<optgroup label="Kerbin's moons:">
-			<option selected="true">Mun</option>
-			<option>Minmus</option>
-		</optgroup>
-		<option selected="true">Duna</option>
-                      <optgroup label="Duna's moons:">
-			<option>Ike</option>
-		</optgroup>
-		<option>Dres</option>
-                      <option>Jool</option>
-		<optgroup label="Jool's moons:">
-			<option>Laythe</option>
-			<option>Vall</option>
-			<option>Tylo</option>
-			<option>Bop</option>
-			<option>Pol</option>
-		</optgroup>
-		<option>Eeloo</option>
-	</select>
+	<label class="item item-input item-select">
+		<div class="input-label">Origin</div>
+	  	<select ng-model="d.origin" id="origin">
+			<option>Moho</option>
+			<option>Eve</option>
+	                      <optgroup label="Eve's moons:">
+				<option>Gilly</option>
+			</optgroup>
+			<option selected="true">Kerbin</option>
+			<optgroup label="Kerbin's moons:">
+				<option>Mun</option>
+				<option>Minmus</option>
+			</optgroup>
+			<option>Duna</option>
+	                      <optgroup label="Duna's moons:">
+				<option>Ike</option>
+			</optgroup>
+			<option>Dres</option>
+	                      <option>Jool</option>
+			<optgroup label="Jool's moons:">
+				<option>Laythe</option>
+				<option>Vall</option>
+				<option>Tylo</option>
+				<option>Bop</option>
+				<option>Pol</option>
+			</optgroup>
+			<option>Eeloo</option>
+		</select>
+	</label>
+	<label class="item item-input item-select">
+		<div class="input-label">Destination</div>
+		<select ng-model="d.destination" id="destination">
+			<option>Moho</option>
+			<option>Eve</option>
+	                      <optgroup label="Eve's moons:">
+				<option>Gilly</option>
+			</optgroup>
+			<option>Kerbin</option>
+			<optgroup label="Kerbin's moons:">
+				<option selected>Mun</option>
+				<option>Minmus</option>
+			</optgroup>
+			<option selected="true">Duna</option>
+	                      <optgroup label="Duna's moons:">
+				<option>Ike</option>
+			</optgroup>
+			<option>Dres</option>
+	                      <option>Jool</option>
+			<optgroup label="Jool's moons:">
+				<option>Laythe</option>
+				<option>Vall</option>
+				<option>Tylo</option>
+				<option>Bop</option>
+				<option>Pol</option>
+			</optgroup>pha
+			<option>Eeloo</option>
+		</select>
+	</label>
 
-  <input type="text" id="orbit" />
-</fieldset>
-	<button type="submit" id="submit" ng-click="doTheMaths()" class="btn btn-primary">Do the maths!</button>
-	<button type="reset" id="reset" class="btn">Reset</button>
+	<label class="item item-input" for="orbit">
+		<span class="input-label">Orbit height:</span>
+		<input type="text" id="orbit" value="100" />
+	</label>
 
-	<label class="control-label" for="phase">Phase angle:</label>
-		<input readonly="true" type="text" id="phase" value="Not calculated" />
+	<label class="item item-input" for="angle">
+		<span class="input-label">Phase angle:</span>
+		<input readonly="true" type="text" id="angle" value="Not calculated" />
+	</label>
 
-	<label class="control-label" for="ejection">Ejection angle:</label>
+	<label class="item item-input" for="ejection">
+		<span class="input-label">Ejec. Angle:</span>
 		<input readonly="true" type="text" id="ejection" value="Not calculated" />
+	</label>
 
-	<label class="control-label" for="velocity">Ejection velocity:</label>
+	<label class="item item-input" for="velocity">
+		<span class="input-label">Velocity:</span>
 		<input readonly="true" type="text" id="velocity" value="Not calculated" />
+	</label>
 
-	<label class="control-label" for="deltav">Ejection burn &Delta;v:</label>
+	<label class="item item-input" for="deltav">
+		<span class="input-label">&Delta;V:</span>
 		<input readonly="true" type="text" id="deltav" value="Not calculated" />
-</div>
+	</label>
+</fieldset>
+	<button type="submit" id="submit" ng-click="doTheMaths(d)" class="button button-balanced">Do the maths!</button>
+	<button type="reset" id="reset" class="button button-dark">Reset</button>
+
+
+</form>

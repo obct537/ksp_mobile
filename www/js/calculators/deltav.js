@@ -1,6 +1,6 @@
-angular.module('calc.controllers', [])
+var a = angular.module('calc.controllers', [])
 
-.controller('dvCtrl', function($scope, Planets) {
+a.controller('dvCtrl', function($scope) {
         data = {
                 // all values in km and corresponding
                 Kerbol: {
@@ -153,29 +153,35 @@ angular.module('calc.controllers', [])
 			soi: 119082.94,
 		}
 
-        }
+    }
+
 
         $scope.doTheMaths = function() {
-                var o = data[$scope.origin];
-                var d = data[$scope.destination];
+                var o = data[origin.value];
+                var d = data[destination.value];
+                if( 0 === undefined || d === undefined )
+                {
+                    angle.value = "Invalid selection";
+                    return false;
+                }
                 var p = data[o.parent];
 
                 // phase angle:
                 var t_h = Math.PI * Math.sqrt(Math.pow(o.alt+d.alt, 3)/(8*p.mu));
                 var phase = (180 - Math.sqrt(p.mu/d.alt) * (t_h/d.alt) * (180/Math.PI)) % 360;
-                $("#phase").val("" + Math.round(phase*100)/100 + "°");
+                angle.value ="" + Math.round(phase*100)/100 + "°";
 
                 // velocity:
                 var exitAlt = o.alt + o.soi; // approximation for exiting on the "outside"
                 var v2 = Math.sqrt(p.mu/exitAlt) * (Math.sqrt((2*d.alt)/(exitAlt+d.alt)) - 1);
-                var r = o.radius + parseInt($("#orbit").val());
+                var r = o.radius + parseInt(orbit.value);
                 var v = Math.sqrt( (r* (o.soi*v2*v2 - 2*o.mu) + 2*o.soi*o.mu) / (r*o.soi) );
-                $("#velocity").val("" + Math.round(v*100000)/100 + " m/s");
+                velocity.value = "" + Math.round(v*100000)/100 + " m/s";
 
 				// delta-v:
 				var v_o = Math.sqrt(o.mu/r);
 				var delta_v = v - v_o;
-				$("#deltav").val("" + Math.round(delta_v*100000)/100 + " m/s");
+				deltav.value ="" + Math.round(delta_v*100000)/100 + " m/s";
 
                 // ejection angle:
                 var eta = v*v/2 - o.mu/r;
@@ -195,14 +201,7 @@ angular.module('calc.controllers', [])
                         eject = (90 - (phi*180/Math.PI) + (nu*180/Math.PI)) % 360;
                 }
 
-                $("#ejection").val("" + Math.round(eject*100)/100 + "°");
-
-                // warning for different inclination
-                if (o.inclination != d.inclination)
-                        $("#inclination-warning").show();
-
-                if (o.speculated || d.speculated)
-                        $("#speculation-warning").show();
+                ejection.value = "" + Math.round(eject*100)/100 + "°";
 
         }
 

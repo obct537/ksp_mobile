@@ -2,3 +2,7 @@
 .planet-top-data {
     margin-left: 5vw;
 }
+
+.calc input {
+    text-align: right;
+}
