@@ -1,9 +1,25 @@
-<ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+<ion-view view-title="Wiki">
+    <ion-content>
+        <div class="list">
+
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Page
+            </div>
+            <select
+                ng-change="setText()"
+                ng-model="myPage"
+                ng-options="page as page.name for page in pages">
+                <option>--</option>
+            </select>
+        </label>
+
+        </div>
+        <div class="card">
+            <div ng-bind="bodyText" class="item item-text-wrap">
+
+            </div>
+        </div>
+    </ion-content>
+
 </ion-view>

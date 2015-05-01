@@ -37,7 +37,6 @@ angular.module('starter', ['ionic', 'calc.controllers','starter.controllers', 's
   })
 
   // Each tab has its own nav history stack:
-
   .state('tab.wiki', {
       url: '/wiki',
       views: {

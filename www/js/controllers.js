@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['starter.calcs'])
+angular.module('starter.controllers', ['starter.calcs', 'firebase'])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -13,9 +13,17 @@ angular.module('starter.controllers', ['starter.calcs'])
   $scope.planet = Planets.get($stateParams.planetId);
 })
 
-.controller('WikiCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+.controller('WikiCtrl', function($scope, $firebaseArray) {
+  var fb = new Firebase("https://kspmobile.firebaseio.com/wikiPages");
+
+  $scope.pages = $firebaseArray(fb);
+  $scope.myPage = null;
+  $scope.bodyText = "";
+
+
+  $scope.setText = function(page) {
+      $scope.myPage = this.myPage;
+      $scope.bodyText = $scope.myPage.text;
   }
 })
 

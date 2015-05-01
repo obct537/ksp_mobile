@@ -9,6 +9,11 @@ a.controller('dvCtrl', function($scope, Planets) {
         {
             data[planets[i].name] = planets[i];
         }
+        var fb = new Firebase("https://kspmobile.firebaseio.com/");
+
+        var pref = fb.child("planets");
+
+        pref.push(data);
 
         $scope.doTheMaths = function() {
                 var o = data[origin.value];
