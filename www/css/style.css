@@ -6,3 +6,13 @@
 .calc input {
     text-align: right;
 }
+
+#pageText {
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: 5px;
+}
+
+.wikiCard {
+    padding: 5px;
+}

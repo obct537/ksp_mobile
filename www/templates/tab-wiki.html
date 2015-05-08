@@ -7,18 +7,19 @@
                 Page
             </div>
             <select
-                ng-change="setText()"
                 ng-model="myPage"
-                ng-options="page as page.name for page in pages">
-                <option>--</option>
+                ng-options="page.name for page in pages">
             </select>
         </label>
 
         </div>
-        <div class="card">
-            <div ng-bind="bodyText" class="item item-text-wrap">
-
-            </div>
+        <div class="card wikiCard">
+            <textarea ng-model="myPage.text" ng-keypress="updateEditor()" id="pageText" class="item item-text-wrap" contenteditable="true">
+                {{myPage.text}}
+            </textarea>
+            <button ng-click="savePages(myPage)" class="button button-outline icon button-large ion-android-cloud-done button-balanced"></button>
+            <button ng-click="showPopup()" class="button button-outline icon ion-plus-round button-large button-calm"></button>
+            <button ng-click="removePage(myPage)" class="button button-outline icon ion-close-circled button-large button-assertive"></button>
         </div>
     </ion-content>
 
