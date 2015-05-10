@@ -64,9 +64,13 @@ angular.module('starter', ['ionic', 'calc.controllers','starter.controllers', 's
           templateUrl: 'templates/calc-detail.html',
           controller: 'CalcDetailCtrl'
         },
+        '0@tab.calcDetails': {
+          templateUrl: 'templates/calculators/0.html',
+          controller: 'dvCtrl'
+        },
         '1@tab.calcDetails': {
           templateUrl: 'templates/calculators/1.html',
-          controller: 'dvCtrl'
+          controller: 'phaseCtrl'
         }
       }
   })

@@ -1,0 +1,39 @@
+<form ng-controller="dvCtrl" class="calc">
+
+	<label class="item item-input item-select">
+		<div class="input-label">
+			Start
+		</div>
+		<select
+			ng-model="start"
+			ng-options="planet.name for planet in planets">
+		</select>
+	</label>
+
+	<label class="item item-input item-select">
+		<div class="input-label">
+			End
+		</div>
+		<select
+			ng-model="end"
+			ng-options="planet.name for planet in planets">
+		</select>
+	</label>
+
+	<ion-checkbox ng-model="landing">Landing</ion-checkbox>
+	<ion-checkbox ng-model="return">Round Trip</ion-checkbox>
+	<ion-checkbox ng-model="aero">Aerobraking</ion-checkbox>
+
+	<label class="item item-input" for="dv">
+		<span class="input-label">&Delta;V:</span>
+		<input readonly="true" ng-model="dv" type="text" id="dv" value="Not calculated" />
+	</label>
+
+	<label class="item item-input" for="dv10">
+		<span class="input-label">&Delta;V + 10% fuzz:</span>
+		<input readonly="true" ng-model="dv10" type="text" id="dv10" value="Not calculated" />
+	</label>
+
+	<button type="submit" id="submit" ng-click="doTheMaths()" class="button button-balanced">Calculate</button>
+	<button type="reset" id="reset" class="button button-dark">Reset</button>
+</form>

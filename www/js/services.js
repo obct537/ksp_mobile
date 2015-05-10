@@ -12,6 +12,12 @@ angular.module('starter.services', [])
     radius: 600,
     inclination: 0,
     soi: 84159.2865,
+    nav: {
+      landing: 4500,
+      orbit: 0,
+      intercept: 950,
+      aero: true
+    }
   }, {
       id: 1,
       name: 'Minmus',
@@ -21,6 +27,12 @@ angular.module('starter.services', [])
       radius: 60,
       inclination: 6,
       soi: 2247.428,
+      nav: {
+        landing: 240,
+        orbit: 80,
+        intercept: 920,
+        aero: false
+      }
   },{
       id: 2,
       name: 'Mun',
@@ -30,6 +42,12 @@ angular.module('starter.services', [])
       radius: 200,
       inclination: 0,
       soi: 2430,
+      nav: {
+        landing: 640,
+        orbit: 210,
+        intercept: 860,
+        aero: false
+      }
   },{
     id: 3,
     name: 'Moho',
@@ -39,6 +57,12 @@ angular.module('starter.services', [])
     radius: 250,
     inclination: 7,
     soi: 11206.449,
+    nav: {
+      landing: 1400,
+      orbit: 2200,
+      intercept: 730,
+      aero: false
+    }
   },{
     id: 4,
     name: 'Eve',
@@ -48,6 +72,12 @@ angular.module('starter.services', [])
     radius: 700,
     inclination: 2.1,
     soi: 85109.364,
+    nav: {
+      landing: 4850,
+      orbit: 1310,
+      intercept: 80,
+      aero: true
+    }
 },{
     id: 5,
     name: "Gilly",
@@ -57,6 +87,12 @@ angular.module('starter.services', [])
     radius: 13,
     inclination: 12,
     soi: 126.123,
+    nav: {
+      landing: 35,
+      orbit: 0,
+      intercept: 0,
+      aero: false
+    }
 },{
     id: 6,
     name: 'Duna',
@@ -66,6 +102,12 @@ angular.module('starter.services', [])
     radius: 320,
     inclination: 1.85,
     soi: 47921.949,
+    nav: {
+      landing: 1380,
+      orbit: 370,
+      intercept: 110,
+      aero: true
+    }
 },{
     id: 7,
     name: "Ike",
@@ -75,6 +117,12 @@ angular.module('starter.services', [])
     radius: 130,
     inclination: 0.2,
     soi: 1049.599,
+    nav: {
+      landing: 535,
+      orbit: 0,
+      intercept: 0,
+      aero: false
+    }
 },{
     id: 8,
     name: 'Eeloo',
@@ -84,6 +132,12 @@ angular.module('starter.services', [])
     radius: 210,
     inclination: 6.15,
     soi: 119082.94,
+    nav: {
+      landing: 840,
+      orbit: 2100,
+      intercept: 1150,
+      aero: false
+    }
   },{
     id: 9,
     name: 'Dres',
@@ -93,6 +147,12 @@ angular.module('starter.services', [])
     radius: 138,
     inclination: 5,
     soi: 32832.84,
+    nav: {
+      landing: 555,
+      orbit: 800,
+      intercept: 350,
+      aero: false
+    }
 },{
   id: 10,
   name: 'Jool',
@@ -102,6 +162,12 @@ angular.module('starter.services', [])
   radius: 6000,
   inclination: 1.3,
   soi: 2455985.185,
+  nav: {
+    landing: 1200,
+    orbit: 2630,
+    intercept: 965,
+    aero: true
+  }
 },{
     id: 11,
     name: 'Vall',
@@ -111,6 +177,12 @@ angular.module('starter.services', [])
     radius: 300,
     inclination: 0,
     soi: 2406.401,
+    nav: {
+      landing: 1176,
+      orbit: 0,
+      intercept: 0,
+      aero: false
+    }
 },{
     id: 12,
     name: 'Laythe',
@@ -120,6 +192,12 @@ angular.module('starter.services', [])
     radius: 500,
     inclination: 0,
     soi: 3723.646,
+    nav: {
+      landing: 2800,
+      orbit: 0,
+      intercept: 0,
+      aero: true
+    }
 },{
     id: 13,
     name: 'Pol',
@@ -129,6 +207,12 @@ angular.module('starter.services', [])
     radius: 44,
     inclination: 1.304,
     soi: 2455985.185,
+    nav: {
+      landing: 180,
+      orbit: 0,
+      intercept: 0,
+      aero: false
+    }
 },{
     id: 14,
     name: 'Tylo',
@@ -138,11 +222,23 @@ angular.module('starter.services', [])
     radius: 600,
     inclination: 0.025,
     soi: 10856.51837,
+    nav: {
+      landing: 3070,
+      orbit: 0,
+      intercept: 0,
+      aero: false
+    }
 },{
     id: 15,
     name: 'Kerbol',
     mu: 1167922000,
-    radius: 6540
+    radius: 6540,
+    nav: {
+      landing: 22000,
+      orbit: 0,
+      intercept: 0,
+      aero: false
+    }
 }];
 
   return {

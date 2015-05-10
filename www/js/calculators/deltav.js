@@ -1,6 +1,6 @@
 var a = angular.module('calc.controllers', ['starter.services'])
 
-a.controller('dvCtrl', function($scope, Planets) {
+a.controller('phaseCtrl', function($scope, Planets) {
 
         planets = Planets.all();
         data = {};
